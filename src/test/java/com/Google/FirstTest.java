@@ -28,9 +28,9 @@ public class FirstTest {
 
 //        driver.get("https://www.google.com/");
 
-        GoogleList googleList = new GoogleList(driver).findCalc();
-
-
+        GoogleList googleList = new GoogleList(driver)
+                .findCalc()
+                .findOne();
 
 //        WebElement element = driver.findElement(By.xpath("//input[@name='q']"));
 

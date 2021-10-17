@@ -7,7 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SimbirSoft_Test" />
+        <module name="Tests_smbs" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Tests_smbs" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

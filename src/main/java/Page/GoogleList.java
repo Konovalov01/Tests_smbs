@@ -23,4 +23,10 @@ public class GoogleList extends BasePage{
         return this;
     }
 
+    public GoogleList findOne() {
+        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='N10B9']"));
+        inputField.click();
+        return this;
+    }
+
 }
