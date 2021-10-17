@@ -42,6 +42,26 @@ public class FirstTest {
 
     }
 
+    @Test
+    public void secondTest() {
+        GoogleList googleList = new GoogleList(driver)
+                .findCalc()
+                .findSix()
+                .findDivide()
+                .findZero()
+                .findEquals();
+
+    }
+
+    @Test
+    public void thridTest() {
+        GoogleList googleList = new GoogleList(driver)
+                .findCalc()
+                .findSinus()
+                .findEquals();
+
+    }
+
     @After
     public void closeTest() {
         //driver.quit();

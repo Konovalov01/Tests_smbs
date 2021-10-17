@@ -125,4 +125,10 @@ public class GoogleList extends BasePage{
         return this;
     }
 
+    public GoogleList findSinus() {
+        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='aN1RFf']"));
+        inputField.click();
+        return this;
+    }
+
 }
