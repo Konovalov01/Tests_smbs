@@ -24,21 +24,21 @@ public class FirstTest {
 
     @Test
     public void firstTest() {
-
-
-//        driver.get("https://www.google.com/");
-
         GoogleList googleList = new GoogleList(driver)
                 .findCalc()
-                .findOne();
-
-//        WebElement element = driver.findElement(By.xpath("//input[@name='q']"));
-
-//        element.sendKeys("Калькулятор", Keys.ENTER);
-
-//        element = driver.findElement(By.xpath("//div[@jsname='zLiRgc']"));
-//
-//        element.sendKeys("1");
+                .findLeftBracket()
+                .findOne()
+                .findPlus()
+                .findTwo()
+                .findRightBracket()
+                .findMultiply()
+                .findThree()
+                .findMinus()
+                .findFour()
+                .findZero()
+                .findDivide()
+                .findFive()
+                .findEquals();
 
     }
 
