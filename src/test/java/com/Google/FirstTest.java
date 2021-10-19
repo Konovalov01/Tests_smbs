@@ -20,7 +20,6 @@ public class FirstTest {
     }
 
     @Test
-    @Description(value = "Проверка операции с целыми числами")
     public void firstTest() {
         GoogleList googleList = new GoogleList(driver)
                 .findCalc()
@@ -42,7 +41,6 @@ public class FirstTest {
     }
 
     @Test
-    @Description(value = "Проверка деления на ноль")
     public void secondTest() {
         GoogleList googleList = new GoogleList(driver)
                 .findCalc()
@@ -55,7 +53,6 @@ public class FirstTest {
     }
 
     @Test
-    @Description(value = "Проверка ошибки при отсутствии значения")
     public void thridTest() {
         GoogleList googleList = new GoogleList(driver)
                 .findCalc()

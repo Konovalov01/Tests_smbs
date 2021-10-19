@@ -1,5 +1,4 @@
 package Page;
-import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,126 +59,106 @@ public class GoogleList {
     @FindBy(xpath = "//span[@jsname='ubtiRe']")
     private WebElement memoryLineText;
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList findCalc() {
         googleInput.sendKeys("Калькулятор", Keys.ENTER);
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickZero() {
         zeroButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickOne() {
         oneButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickTwo() {
         twoButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickThree() {
         threeButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickFour() {
         fourButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickFive() {
         fiveButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickSix() {
         sixButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickSeven() {
         sevenButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickEight() {
         eightButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickNine() {
         nineButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickLeftBracket() {
         leftBracketButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickRightBracket() {
         rightBracketButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickPlus() {
         plusButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickMinus() {
         minusButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickMultiply() {
         multiplyButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickDivide() {
         divideButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickEquals() {
         equalsButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList clickSinus() {
         sinusButton.click();
         return this;
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
+
     public String getResult() {
         return resultText.getText();
     }
 
-    @Step("Проверка разности числа {num1} и числа {num2}")
     public String getMemoryLine() {
         return memoryLineText.getText();
     }
