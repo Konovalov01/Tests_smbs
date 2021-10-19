@@ -1,71 +1,75 @@
 package com.Google;
-
 import Page.GoogleList;
+import io.qameta.allure.Description;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class FirstTest {
+import static org.junit.Assert.assertEquals;
 
-    public  ChromeDriver driver;
+public class FirstTest {
+    public static WebDriver driver;
 
     @Before
     public void setUp() {
         System.setProperty("webdriver.chrome.driver","src/main/resources/drivers/chromedriver.exe");
-
         driver = new ChromeDriver();
-
-        System.out.println("test start");
+        System.out.println("Test start");
     }
 
     @Test
+    @Description(value = "Проверка операции с целыми числами")
     public void firstTest() {
         GoogleList googleList = new GoogleList(driver)
                 .findCalc()
-                .findLeftBracket()
-                .findOne()
-                .findPlus()
-                .findTwo()
-                .findRightBracket()
-                .findMultiply()
-                .findThree()
-                .findMinus()
-                .findFour()
-                .findZero()
-                .findDivide()
-                .findFive()
-                .findEquals();
-
+                .clickLeftBracket()
+                .clickOne()
+                .clickPlus()
+                .clickTwo()
+                .clickRightBracket()
+                .clickMultiply()
+                .clickThree()
+                .clickMinus()
+                .clickFour()
+                .clickZero()
+                .clickDivide()
+                .clickFive()
+                .clickEquals();
+        assertEquals("Wrong result in Test 1", googleList.getResult(), "1");
+        assertEquals("Wrong memory string in Test 1", googleList.getMemoryLine(), "(1 + 2) × 3 - 40 ÷ 5 =");
     }
 
     @Test
+    @Description(value = "Проверка деления на ноль")
     public void secondTest() {
         GoogleList googleList = new GoogleList(driver)
                 .findCalc()
-                .findSix()
-                .findDivide()
-                .findZero()
-                .findEquals();
-
+                .clickSix()
+                .clickDivide()
+                .clickZero()
+                .clickEquals();
+        assertEquals("Wrong result in Test 2", googleList.getResult(), "Infinity");
+        assertEquals("Wrong memory string in Test 2", googleList.getMemoryLine(), "6 ÷ 0 =");
     }
 
     @Test
+    @Description(value = "Проверка ошибки при отсутствии значения")
     public void thridTest() {
         GoogleList googleList = new GoogleList(driver)
                 .findCalc()
-                .findSinus()
-                .findEquals();
+                .clickSinus()
+                .clickEquals();
+        assertEquals("Wrong result in Test 3", googleList.getResult(), "Error");
+        assertEquals("Wrong memory string in Test 3", googleList.getMemoryLine(), "sin() =");
 
     }
 
     @After
-    public void closeTest() {
-        //driver.quit();
-
-        System.out.println("test finish");
+    public void closeTest() throws InterruptedException {
+        Thread.sleep(3000);
+        driver.quit();
+        System.out.println("Test finish");
     }
 }

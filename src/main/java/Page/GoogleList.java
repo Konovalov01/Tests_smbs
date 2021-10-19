@@ -1,134 +1,187 @@
 package Page;
-
-import org.openqa.selenium.By;
+import io.qameta.allure.Step;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-public class GoogleList extends BasePage{
+public class GoogleList {
 
-    public GoogleList(ChromeDriver driver){
+    public WebDriver driver;
+
+    public GoogleList(WebDriver driver) {
+        PageFactory.initElements(driver, this);
         this.driver = driver;
         driver.get("https://www.google.com/");
     }
 
-//    @FindBy (xpath = "//input[@name='q']")
-//    private WebElement inputField = driver.findElement(By.xpath("//input[@name='q']"));
+    @FindBy(xpath = "//input[@name='q']")
+    private WebElement googleInput;
+    @FindBy(xpath = "//div[@jsname='bkEvMb']")
+    private WebElement zeroButton;
+    @FindBy(xpath = "//div[@jsname='N10B9']")
+    private WebElement oneButton;
+    @FindBy(xpath = "//div[@jsname='lVjWed']")
+    private WebElement twoButton;
+    @FindBy(xpath = "//div[@jsname='KN1kY']")
+    private WebElement threeButton;
+    @FindBy(xpath = "//div[@jsname='xAP7E']")
+    private WebElement fourButton;
+    @FindBy(xpath = "//div[@jsname='Ax5wH']")
+    private WebElement fiveButton;
+    @FindBy(xpath = "//div[@jsname='abcgof']")
+    private WebElement sixButton;
+    @FindBy(xpath = "//div[@jsname='rk7bOd']")
+    private WebElement sevenButton;
+    @FindBy(xpath = "//div[@jsname='T7PMFe']")
+    private WebElement eightButton;
+    @FindBy(xpath = "//div[@jsname='XoxYJ']")
+    private WebElement nineButton;
+    @FindBy(xpath = "//div[@jsname='j93WEe']")
+    private WebElement leftBracketButton;
+    @FindBy(xpath = "//div[@jsname='qCp9A']")
+    private WebElement rightBracketButton;
+    @FindBy(xpath = "//div[@jsname='XSr6wc']")
+    private WebElement plusButton;
+    @FindBy(xpath = "//div[@jsname='pPHzQc']")
+    private WebElement minusButton;
+    @FindBy(xpath = "//div[@jsname='YovRWb']")
+    private WebElement multiplyButton;
+    @FindBy(xpath = "//div[@jsname='WxTTNd']")
+    private WebElement divideButton;
+    @FindBy(xpath = "//div[@jsname='aN1RFf']")
+    private WebElement sinusButton;
+    @FindBy(xpath = "//div[@jsname='Pt8tGc']")
+    private WebElement equalsButton;
 
+    @FindBy(xpath = "//span[@jsname='VssY5c']")
+    private WebElement resultText;
+    @FindBy(xpath = "//span[@jsname='ubtiRe']")
+    private WebElement memoryLineText;
+
+    @Step("Проверка разности числа {num1} и числа {num2}")
     public GoogleList findCalc() {
-        WebElement inputField = driver.findElement(By.xpath("//input[@name='q']"));
-        inputField.sendKeys("Калькулятор", Keys.ENTER);
+        googleInput.sendKeys("Калькулятор", Keys.ENTER);
         return this;
     }
 
-    public GoogleList findZero() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='bkEvMb']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickZero() {
+        zeroButton.click();
         return this;
     }
 
-    public GoogleList findOne() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='N10B9']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickOne() {
+        oneButton.click();
         return this;
     }
 
-    public GoogleList findTwo() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='lVjWed']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickTwo() {
+        twoButton.click();
         return this;
     }
 
-    public GoogleList findThree() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='KN1kY']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickThree() {
+        threeButton.click();
         return this;
     }
 
-    public GoogleList findFour() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='xAP7E']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickFour() {
+        fourButton.click();
         return this;
     }
 
-    public GoogleList findFive() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='Ax5wH']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickFive() {
+        fiveButton.click();
         return this;
     }
 
-    public GoogleList findSix() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='abcgof']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickSix() {
+        sixButton.click();
         return this;
     }
 
-    public GoogleList findSeven() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='rk7bOd']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickSeven() {
+        sevenButton.click();
         return this;
     }
 
-    public GoogleList findEight() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='T7PMFe']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickEight() {
+        eightButton.click();
         return this;
     }
 
-    public GoogleList findNine() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='XoxYJ']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickNine() {
+        nineButton.click();
         return this;
     }
 
-    public GoogleList findLeftBracket() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='j93WEe']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickLeftBracket() {
+        leftBracketButton.click();
         return this;
     }
 
-    public GoogleList findRightBracket() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='qCp9A']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickRightBracket() {
+        rightBracketButton.click();
         return this;
     }
 
-    public GoogleList findPlus() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='XSr6wc']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickPlus() {
+        plusButton.click();
         return this;
     }
 
-    public GoogleList findMinus() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='pPHzQc']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickMinus() {
+        minusButton.click();
         return this;
     }
 
-    public GoogleList findMultiply() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='YovRWb']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickMultiply() {
+        multiplyButton.click();
         return this;
     }
 
-    public GoogleList findDivide() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='WxTTNd']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickDivide() {
+        divideButton.click();
         return this;
     }
 
-    public GoogleList findEquals() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='Pt8tGc']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickEquals() {
+        equalsButton.click();
         return this;
     }
 
-    public GoogleList findSinus() {
-        WebElement inputField = driver.findElement(By.xpath("//div[@jsname='aN1RFf']"));
-        inputField.click();
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public GoogleList clickSinus() {
+        sinusButton.click();
         return this;
+    }
+
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public String getResult() {
+        return resultText.getText();
+    }
+
+    @Step("Проверка разности числа {num1} и числа {num2}")
+    public String getMemoryLine() {
+        return memoryLineText.getText();
     }
 
 }
